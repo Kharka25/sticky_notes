@@ -67,6 +67,9 @@ fun DisplayNoteModal(viewModel: NoteViewModel) {
     NoteDetailsModal(
         viewModel = viewModel,
         showDialog = showDialog,
+        onConfirm = {
+            showDialog = false
+        },
         onDismiss = {
             showDialog = false
         }

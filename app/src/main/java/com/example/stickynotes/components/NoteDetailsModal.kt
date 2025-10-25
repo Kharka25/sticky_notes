@@ -54,7 +54,8 @@ fun NoteDetailsModal(
                         color = selectedColor.toArgb(),
                         description = description,
                         title = title)
-                    viewModel.createNewNote(note);
+                    viewModel.createNewNote(note)
+                    onConfirm()
                 }) { Text(text = "Save note")} },
             dismissButton = {
                 Button(onClick = onDismiss) {
@@ -74,7 +75,9 @@ fun NoteDetailsModal(
                         onValueChange = { description = it },
                         label = {
                             Text(text = "Note Description")})
-                    Spacer(modifier = Modifier.height(16.dp))}}
+                    Spacer(modifier = Modifier.height(16.dp))
+                    ColorPicker(selectedColor, onColorSelect = { selectedColor = it})
+                }}
         )
     }
 }
